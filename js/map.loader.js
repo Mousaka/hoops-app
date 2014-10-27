@@ -13,7 +13,7 @@
     // onSuccess Geolocation
     //
     function onSuccess(position) {
-        var element = document.getElementById('geo-info');
+        var element = document.getElementById('geop');
         element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
                             'Longitude: '          + position.coords.longitude             + '<br />' +
                             'Altitude: '           + position.coords.altitude              + '<br />' +
@@ -23,7 +23,10 @@
                             'Speed: '              + position.coords.speed                 + '<br />' +
                             'Timestamp: '          +                                   position.timestamp          + '<br />';
     }
-
+    function onError(error) {
+        alert('code: '    + error.code    + '\n' +
+                'message: ' + error.message + '\n');
+    }
     function map_initialize(){
        
         //Google map option
