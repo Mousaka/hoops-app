@@ -27,4 +27,6 @@
 
     <!-- plugins -->
 
+    <gap:plugin name="org.apache.cordova.geolocation" />
+
 </widget>
