@@ -3,7 +3,7 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "com.likrill.hoops"
         versionCode = "10" 
-        version     = "3.1.1" >
+        version     = "4.1.1" >
 
     <!-- versionCode is optional and Android only -->
 
@@ -13,7 +13,7 @@
         Find basketball games in your area!
     </description>
 
-    <author email="support@phonegap.com">
+    <author email="kristian.lundstrom@gmail.com">
         Yang Li and Kristian Lundström
     </author>
 
