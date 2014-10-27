@@ -25,5 +25,7 @@
     <gap:platform name="ios" />
     <gap:platform name="android" />
 
+    <!-- plugins -->
+    <gap:plugin name="org.apache.cordova.geolocation" />
 
 </widget>
