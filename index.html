@@ -4,70 +4,17 @@
 		<title>Hoops</title>
 		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-­width, initial‐scale=1, maximum-scale=1"/> 
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
-		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+		<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/jquery.mobile-1.4.4.min.js"></script>
 		<!-- GoogleMaps !-->
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2-w7oQ5Sqt6SZMtWNbaDPl7S_2AjNeIU" type="text/javascript"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js" type="text/javascript"></script>
+		<!-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js" type="text/javascript"></script>
+    </-->
 		<script src="js/jquery.ui.map.full.min.js" type="text/javascript"></script>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<script type="text/javascript">
-    		$(document).ready(function() {
-    var mapCenter = new google.maps.LatLng(47.6145, -122.3418); //Google map Coordinates
-    var map;
-    map_initialize(); // load map
-    function map_initialize(){
-       
-        //Google map option
-        var googleMapOptions =
-        {
-            center: mapCenter, // map center
-            zoom: 17, //zoom level, 0 = earth view to higher value
-            panControl: true, //enable pan Control
-            zoomControl: true, //enable zoom control
-            zoomControlOptions: {
-            style: google.maps.ZoomControlStyle.SMALL //zoom control size
-        },
-            scaleControl: true, // enable scale control
-            mapTypeId: google.maps.MapTypeId.ROADMAP // google map type
-        };
-       
-        map = new google.maps.Map(document.getElementById("map-canvas"), googleMapOptions);
-
-        //##### drop a new marker on double click ######
-        google.maps.event.addListener(map, 'dblclick', function(event) {
-        var marker = new google.maps.Marker({
-            position: event.latLng, //map Coordinates where user right clicked
-            map: map,
-            draggable:true, //set marker draggable
-            animation: google.maps.Animation.DROP, //bounce animation
-            title:"Hello World!",
-            icon: "logo.png" //custom pin icon
-        });
-                //Content structure of info Window for the Markers
-        var contentString = $('<div class="marker-info-win">'+
-        '<div class="marker-inner-win"><span class="info-content">'+
-        '<h1 class="marker-heading">New Marker</h1>'+
-        'This is a new marker infoWindow'+
-        '</span>'+
-        '</div></div>');
-           
-        //Create an infoWindow
-        var infowindow = new google.maps.InfoWindow();
-       
-        //set the content of infoWindow
-        infowindow.setContent(contentString[0]);
-       
-        //add click event listener to marker which will open infoWindow          
-        google.maps.event.addListener(marker, 'click', function() {
-            infowindow.open(map,marker); // click on marker opens info window
-            map.panTo(marker.getPosition());
-        });
-    });
-    }
-});
-</script>
+		<script src="js/map.loader.js" type="text/javascript"></script>
 </head>
 <body>
 		<div data-role="page" data-control-title="Home" id="page1">
