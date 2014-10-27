@@ -19,7 +19,7 @@
 
     <!-- preferences -->
     <preference name="fullscreen" value="true" /> 
-    <gap:splash src="splash.png" width="300" />
+    <gap:splash src="splash.png" width="1080" height="1920" />
 
     <!-- platforms -->
     <gap:platform name="ios" />
