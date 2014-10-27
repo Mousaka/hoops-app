@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.likrill.hoops"
+        versionCode = "10" 
+        version     = "3.1.1" >
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>Hoops</name>
+
+    <description>
+        Find basketball games in your area!
+    </description>
+
+    <author email="support@phonegap.com">
+        Yang Li and Kristian Lundström
+    </author>
+
+</widget>
