@@ -16,10 +16,10 @@
     <author email="kristian.lundstrom@gmail.com">
         Yang Li and Kristian Lundström
     </author>
-    
+
     <!-- preferences -->
     <preference name="fullscreen" value="true" /> 
-    <gap:splash src="splash.png" />
+    <gap:splash src="splash.png" width="300" />
 
     <!-- platforms -->
     <gap:platform name="ios" />
