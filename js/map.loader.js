@@ -4,27 +4,20 @@
     var infowindow;
     var markers = new Array();
     var infoWindows = new Array();
-    map_initialize(); // load map
 
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
-
-
+    var position_start = null;
     // onSuccess Geolocation
     //
     function onSuccess(position) {
-        var element = document.getElementById('geop');
-        element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
-                            'Longitude: '          + position.coords.longitude             + '<br />' +
-                            'Altitude: '           + position.coords.altitude              + '<br />' +
-                            'Accuracy: '           + position.coords.accuracy              + '<br />' +
-                            'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
-                            'Heading: '            + position.coords.heading               + '<br />' +
-                            'Speed: '              + position.coords.speed                 + '<br />' +
-                            'Timestamp: '          +                                   position.timestamp          + '<br />';
+        position_start=position;
+        mapCenter = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        map_initialize();
     }
     function onError(error) {
         alert('code: '    + error.code    + '\n' +
                 'message: ' + error.message + '\n');
+        map_initialize();
     }
     function map_initialize(){
        
