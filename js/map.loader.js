@@ -4,23 +4,37 @@
     var infowindow;
     var markers = new Array();
     var infoWindows = new Array();
-
-    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    var loadMapfunc;
     var position_start = null;
+
+    function loadLocation(){
+        console.log("Loading locations..");
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+        console.log("loading standard map in 5 seconds..");
+        loadMapfunc=setTimeout(map_initialize(),5000);
+    }
+    loadLocation();
+    function cancelLoadLocation(){
+        console.log("Cancled loading standard map");
+        clearTimeout(loadMapfunc);
+        console.log("..to long loading time. Loading default map");
+    }
     // onSuccess Geolocation
     //
     function onSuccess(position) {
+        cancelLoadLocation();
+        console.log("inSuccess");
         position_start=position;
         mapCenter = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
         map_initialize();
     }
     function onError(error) {
-        alert('code: '    + error.code    + '\n' +
-                'message: ' + error.message + '\n');
+        console.log("inERROR");
+        //alert('code: '    + error.code    + '\n' + 'message: ' + error.message + '\n');
         map_initialize();
     }
     function map_initialize(){
-       
+       console.log("In map_initialize..");
         //Google map option
         var googleMapOptions =
         {
