@@ -51,3 +51,10 @@ IOS/www/
 
 # Custom
 *.zip
+.cordova/
+.gitignore.swp
+hooks/
+platforms/
+plugins/
+
+www/copy of index.html
