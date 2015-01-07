@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+var ROOT;
 var app = {
     // Application Constructor
     initialize: function() {
@@ -27,6 +28,11 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        var ROOT = 'https://your_app_id.appspot.com/_ah/api';
+        gapi.client.load('your_api_name', 'v1', function() {
+        loeadSuccess();
+        }, ROOT);
+
     },
     // deviceready Event Handler
     //
@@ -34,6 +40,8 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+
+
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
